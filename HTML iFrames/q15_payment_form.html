@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 15 - Payment Form</title>
+</head>
+<body>
+    <h1>Payment Gateway</h1>
+
+    <form action="#" method="post">
+        <label for="cardholder_name">Cardholder Name:</label><br>
+        <input type="text" id="cardholder_name" name="cardholder_name" required><br><br>
+
+        <label for="card_number">Card Number:</label><br>
+        <input type="text" id="card_number" name="card_number" maxlength="16" placeholder="1234 5678 9101 1121" required><br><br>
+
+        <label for="expiry_date">Expiry Date:</label><br>
+        <input type="month" id="expiry_date" name="expiry_date" required><br><br>
+
+        <label for="cvv">CVV:</label><br>
+        <input type="password" id="cvv" name="cvv" maxlength="4" placeholder="123" required><br><br>
+
+        <button type="submit">Pay Now</button>
+    </form>
+</body>
+</html>

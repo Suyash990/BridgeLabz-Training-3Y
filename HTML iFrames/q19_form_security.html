@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 19 - Form Security Attributes</title>
+</head>
+<body>
+    <!-- Question 19: HTML form security attributes (autocomplete="off" and required) -->
+    <h1>Secure Login Form</h1>
+
+    <form action="#" method="post" autocomplete="off">
+        <label for="sec_username">Username:</label><br>
+        <input type="text" id="sec_username" name="username" required><br><br>
+
+        <label for="sec_pin">Security PIN:</label><br>
+        <input type="password" id="sec_pin" name="pin" required><br><br>
+
+        <input type="submit" value="Secure Submit">
+    </form>
+
+    <br>
+    <p>
+        <strong>Security Note:</strong> Setting <code>autocomplete="off"</code> prevents browsers from caching or automatically saving sensitive input field values (such as passwords, credit card numbers, or PINs). This protects users against unauthorized access if their device is shared or compromised.
+    </p>
+</body>
+</html>

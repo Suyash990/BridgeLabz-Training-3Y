@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 7 - Login Form with CSRF Token</title>
+</head>
+<body>
+    <h1>User Login</h1>
+
+    <form action="#" method="post">
+        <input type="hidden" name="csrf_token" value="d9a8f7c6e5b4a321_dummy_csrf_token">
+
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <input type="submit" value="Login">
+    </form>
+</body>
+</html>
