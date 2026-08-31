@@ -1,0 +1,34 @@
+.container{
+    border: 1px solid red;
+    height: 600px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: repeat(3,150px);
+}
+.box{
+    border: 1px solid black;
+    /* height: 100px; */
+    /* background-color: red; */
+    border-radius: 20px;
+    text-align: ;
+}
+.box1{
+    background-color: aqua;
+    grid-column: 1/4;
+}
+.box2{
+    background-color: beige;
+    grid-column: 1/3;
+}
+.box3{
+    background-color: yellow;
+    grid-column: 3/4;
+    grid-row: 2/4;
+}
+.box4{
+    background-color: red;
+}
+.box5{
+    background-color: green;
+}

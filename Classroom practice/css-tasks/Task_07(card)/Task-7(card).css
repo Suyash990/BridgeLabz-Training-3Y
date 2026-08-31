@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #111;
+    font-family: Arial, sans-serif;
+}
+
+
+/* Main Card */
+
+.card {
+    width: 375px;
+    background-color: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Image Section */
+
+.image-section {
+    height: 295px;
+    position: relative;
+    background-color: #c91f23;
+    overflow: hidden;
+}
+
+.image-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* Discount */
+
+.discount {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+
+    background-color: #f0442e;
+    color: white;
+
+    padding: 9px 18px;
+    border-radius: 25px;
+
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+/* Heart */
+
+.heart {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+
+    width: 53px;
+    height: 53px;
+
+    background-color: white;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 38px;
+    color: black;
+
+    cursor: pointer;
+}
+
+
+/* Details */
+
+.details {
+    padding: 35px 23px 23px;
+}
+
+
+/* Category */
+
+.category {
+    display: inline-block;
+
+    color: white;
+    background-color: #5574d8;
+
+    font-size: 18px;
+    letter-spacing: 1px;
+
+    padding: 1px 3px;
+    margin-bottom: 12px;
+}
+
+
+/* Product Name */
+
+h2 {
+    display: inline;
+    background-color: #5574d8;
+    color: white;
+
+    font-size: 25px;
+    line-height: 1.6;
+}
+
+
+/* Rating */
+
+.rating {
+    margin-top: 18px;
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    font-size: 22px;
+}
+
+.rating span {
+    color: #e9bd3f;
+}
+
+.rating .reviews {
+    color: #777;
+    font-size: 17px;
+    margin-left: 6px;
+}
+
+
+/* Price */
+
+.price {
+    margin-top: 17px;
+
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.price strong {
+    font-size: 29px;
+    color: #111;
+}
+
+.price del {
+    color: #777;
+    font-size: 17px;
+}
+
+
+/* Button */
+
+button {
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding: 14px;
+
+    background-color: black;
+    color: white;
+
+    border: none;
+    border-radius: 9px;
+
+    font-size: 17px;
+
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #333;
+}

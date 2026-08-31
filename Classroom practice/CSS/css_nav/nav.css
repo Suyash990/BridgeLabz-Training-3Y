@@ -1,0 +1,15 @@
+.logo{
+    border: 1px border rebeccapurple;
+}
+
+.nav-link ul{
+    display: flex;
+    text-align: center;
+
+}
+
+.navbar{
+    background-color: bisque;
+    display: flex;
+    justify-content: center;
+}
