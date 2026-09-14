@@ -1,0 +1,98 @@
+/* CSS for Question 4: Shadows and Depth Effect Layout */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f1f5f9;
+    color: #1e293b;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* Headings with text-shadow for depth */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #0f172a;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15); /* text-shadow for depth */
+}
+
+p.subtitle {
+    font-size: 1.1rem;
+    color: #64748b;
+    margin-bottom: 50px;
+}
+
+/* Arranged in a single row using Flexbox or Grid */
+.cards-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+/* Base Card Styling */
+.card {
+    background-color: #ffffff;
+    flex: 1;
+    min-width: 280px;
+    padding: 35px 25px;
+    border-radius: 16px;
+    /* CSS transitions for smooth animation */
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    border: 1px solid #e2e8f0;
+}
+
+.card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #0f172a;
+    /* Text-shadow on card titles */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.card p {
+    font-size: 0.98rem;
+    color: #475569;
+    line-height: 1.6;
+}
+
+/* Card 1: Soft Ambient Shadow */
+.card-soft {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+}
+
+/* On hover: lift up using larger shadow */
+.card-soft:hover {
+    transform: translateY(-10px); /* Lifts up */
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.06); /* Larger shadow */
+}
+
+/* Card 2: Deep Elevated Shadow */
+.card-deep {
+    box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.12), 0 4px 6px -2px rgba(15, 23, 42, 0.05);
+}
+
+.card-deep:hover {
+    transform: translateY(-10px); /* Lifts up */
+    box-shadow: 0 25px 30px -5px rgba(15, 23, 42, 0.25), 0 12px 15px -5px rgba(15, 23, 42, 0.1); /* Larger shadow */
+}
+
+/* Card 3: Glowing Colored Shadow */
+.card-glow {
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.15);
+}
+
+.card-glow:hover {
+    transform: translateY(-10px); /* Lifts up */
+    box-shadow: 0 20px 35px rgba(59, 130, 246, 0.35); /* Larger glowing shadow */
+}

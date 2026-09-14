@@ -1,0 +1,134 @@
+/* CSS for Question 10: Navigation Bar with Transitions and Hover Effects */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8fafc;
+    color: #1e293b;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 1. Build a horizontal navigation bar with five links */
+header {
+    background-color: #0f172a;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+}
+
+.brand {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.brand span {
+    color: #38bdf8;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+
+/* Add padding, borders, and smooth hover transitions (transition: all 0.3s ease;) */
+.nav-links a {
+    display: inline-block;
+    padding: 10px 20px; /* Padding */
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 2px solid transparent; /* Border */
+    border-radius: 8px;
+    /* Smooth hover transition */
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #38bdf8;
+    border-color: #38bdf8;
+    background-color: rgba(56, 189, 248, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Highlight active link with distinct background or underline */
+.nav-links a.active {
+    background-color: #0284c7; /* Distinct background highlight */
+    color: #ffffff;
+    border-color: #0284c7;
+    box-shadow: 0 4px 10px rgba(2, 132, 199, 0.4);
+}
+
+/* Main Content Demo */
+main {
+    flex: 1;
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+main h1 {
+    font-size: 2.4rem;
+    color: #0f172a;
+    margin-bottom: 15px;
+}
+
+main p {
+    font-size: 1.1rem;
+    color: #64748b;
+    line-height: 1.7;
+}
+
+/* Footer section with simple centered text */
+footer {
+    background-color: #0f172a;
+    color: #94a3b8;
+    text-align: center; /* Simple centered text */
+    padding: 20px;
+    font-size: 0.95rem;
+    margin-top: auto;
+    border-top: 1px solid #1e293b;
+}
+
+/* Make navbar responsive — stack vertically below 700px */
+@media (max-width: 700px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .nav-links {
+        flex-direction: column; /* Stack vertically below 700px */
+        width: 100%;
+        text-align: center;
+        gap: 8px;
+    }
+
+    .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 12px;
+    }
+}

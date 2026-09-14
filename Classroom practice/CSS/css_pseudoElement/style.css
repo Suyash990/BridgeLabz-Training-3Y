@@ -1,0 +1,71 @@
+h1{
+    position: relative;
+}
+h1::before{
+    position: absolute;
+    content: " ";
+    width: 60px;
+    height: 3px;
+    background-color: red;
+    top:45px;
+    transition: width 1s ease;
+}
+h1::first-letter{
+    font-size: 3rem;
+    color:gray
+}
+h1:hover::before{
+    width: 130px;
+}
+h1:hover{
+    color: red;
+}
+.box{
+    width: 120px;
+    height: 25px;
+    background-color: black;
+    border-radius: 10px;
+    text-align: center;
+}
+.btn{
+    margin: 30px 50px;
+    position: relative;
+}
+.btn::after{
+    position: absolute;
+    content: "This is a button";
+    width: 120px;
+    height: 25px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding: 3px;
+    border-radius: 10px;
+    bottom: 25px;
+    left:-20px;
+    opacity: 0;
+}
+.box {
+    color: white;
+}
+.btn::before{
+    position: absolute;
+    content: " ";
+    width: 20px;
+    height: 20px;
+    background-color: rgb(0, 0, 0);
+    transform: rotate(45deg);
+    color: white;
+    padding: 3px;
+    bottom: 25px;
+    left:30px;
+    opacity: 0;
+}
+.btn:hover::after{
+    opacity: 1;
+}
+.btn:hover::before{
+    opacity: 1;
+}
+.box {
+    color: white;
+}

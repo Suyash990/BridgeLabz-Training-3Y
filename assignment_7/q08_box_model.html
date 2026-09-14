@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 8 - Box Model Exploration Page</title>
+    <link rel="stylesheet" href="q08_box_model.css">
+</head>
+<body>
+    <header>
+        <h1>CSS Box Model Exploration</h1>
+        <p>Visually differentiating Content, Padding, Border, and Margin layers alongside box-sizing behavior.</p>
+    </header>
+
+    <main class="demo-container">
+        <!-- Visual Box Model Layers -->
+        <div class="margin-layer">
+            <div class="border-layer">
+                <div class="padding-layer">
+                    <div class="content-layer">
+                        CONTENT AREA
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Box-Sizing Comparison -->
+        <div class="sizing-comparison">
+            <div class="box-comparison content-box-demo">
+                <p>box-sizing: content-box</p>
+                <small>Total Width = 300 + 40 + 16 = 356px</small>
+            </div>
+            <div class="box-comparison border-box-demo">
+                <p>box-sizing: border-box</p>
+                <small>Total Width = 300px (Fixed)</small>
+            </div>
+        </div>
+    </main>
+
+    <!-- Short descriptive text for each part of the box model -->
+    <section class="layer-description">
+        <h2>Box Model Layer Summary</h2>
+        <ul>
+            <li class="tag-margin"><strong>Margin Layer:</strong> External space around element outside border.</li>
+            <li class="tag-border"><strong>Border Layer:</strong> Surrounds padding and content.</li>
+            <li class="tag-padding"><strong>Padding Layer:</strong> Clear space around content inside border.</li>
+            <li class="tag-content"><strong>Content Area:</strong> Where text and images appear.</li>
+        </ul>
+    </section>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 5 - Advanced CSS Selectors</title>
+    <link rel="stylesheet" href="q05_advanced_selectors.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Advanced CSS Selectors Demonstration</h1>
+
+        <h2>Selector Examples &amp; Combinators</h2>
+        <p>This paragraph is styled using the Adjacent Sibling Combinator (h2 + p).</p>
+
+        <!-- Form demonstrating Attribute Selectors & Focus -->
+        <label for="username">User Name Input:</label>
+        <input type="text" id="username" placeholder="Type username here...">
+        <small>General Sibling Combinator (~): Helper text styled as a sibling following input.</small>
+
+        <!-- Secure Link demonstrating Attribute Selector [href^="https"] and ::after -->
+        <p>External Resource: <a href="https://developer.mozilla.org" target="_blank">MDN Web Docs</a></p>
+
+        <!-- List demonstrating :nth-child(), ::before, and Child Combinator (>) -->
+        <h3>Selector Test List:</h3>
+        <ul class="selector-list">
+            <li>Item 1: Odd row styled with :nth-child(odd)</li>
+            <li>Item 2: Even row styled with :nth-child(even)</li>
+            <li>Item 3: Odd row with ::before arrow pseudo-element</li>
+            <li>Item 4: Even row with child combinator (ul.selector-list > li)</li>
+        </ul>
+    </div>
+</body>
+</html>

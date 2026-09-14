@@ -1,0 +1,91 @@
+/* CSS for Question 2: Height and Width Practice Layout */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Center all boxes vertically and horizontally using Flexbox alignment */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0f172a;
+    color: #f8fafc;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #38bdf8;
+}
+
+/* Flexbox container centering layout boxes */
+.layout-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px; /* max-width property */
+    flex-wrap: wrap;
+}
+
+/* Base box styling */
+.box {
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Box 1: Fixed dimensions in px and em units */
+.box-1 {
+    width: 320px; /* px unit */
+    height: 220px; /* px unit */
+    min-height: 180px; /* min-height property */
+    background-color: #0284c7; /* Distinct background color */
+    overflow: hidden; /* overflow property: clips text */
+}
+
+/* Box 2: Relative percentage width & vh height */
+.box-2 {
+    width: 30%; /* % unit */
+    min-width: 280px;
+    height: 35vh; /* vh unit */
+    min-height: 250px; /* min-height property */
+    background-color: #7c3aed; /* Distinct background color */
+    overflow: auto; /* overflow property: scrollbar on overflow */
+}
+
+/* Box 3: em units & max-width constraint */
+.box-3 {
+    width: 22em; /* em unit */
+    max-width: 350px; /* max-width property */
+    height: 18em; /* em unit */
+    background-color: #059669; /* Distinct background color */
+    overflow: scroll; /* overflow property: forces scrollbars */
+}
+
+.box h2 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.box code {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+}

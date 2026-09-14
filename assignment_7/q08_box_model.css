@@ -1,0 +1,147 @@
+/* CSS for Question 8: Box Model Exploration Page */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Center the demonstration using Flexbox */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f1f5f9;
+    color: #1e293b;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+header h1 {
+    font-size: 2.3rem;
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.05rem;
+    color: #64748b;
+}
+
+/* Container centering demonstrations */
+.demo-container {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1100px;
+}
+
+/* -------------------------------------------------------------
+   1. VISUAL BOX MODEL LAYER DEMONSTRATION (Margin, Border, Padding, Content)
+   ------------------------------------------------------------- */
+.margin-layer {
+    background-color: #ffedd5; /* Margin layer color */
+    outline: 2px dashed #f97316; /* Margin layer outline */
+    padding: 25px; /* Represents Margin spacing visually */
+    border-radius: 12px;
+}
+
+.border-layer {
+    background-color: #fef08a; /* Border layer color */
+    border: 8px solid #eab308; /* Border layer border */
+    padding: 25px; /* Represents Padding spacing visually */
+    border-radius: 8px;
+}
+
+.padding-layer {
+    background-color: #dcfce7; /* Padding layer color */
+    outline: 2px dashed #22c55e; /* Padding layer outline */
+    padding: 25px;
+    border-radius: 4px;
+}
+
+.content-layer {
+    background-color: #dbeafe; /* Content layer color */
+    outline: 2px solid #3b82f6; /* Content layer outline */
+    padding: 20px;
+    text-align: center;
+    color: #1e3a8a;
+    font-weight: 700;
+}
+
+/* -------------------------------------------------------------
+   2. BOX-SIZING COMPARISON (content-box vs border-box)
+   ------------------------------------------------------------- */
+.sizing-comparison {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.box-comparison {
+    width: 300px;
+    height: 120px;
+    padding: 20px;
+    border: 8px solid #2563eb;
+    margin: 10px 0;
+    color: #ffffff;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
+
+/* Default content-box */
+.content-box-demo {
+    box-sizing: content-box; /* Default box-sizing: content-box */
+    background-color: #ef4444;
+}
+
+/* border-box */
+.border-box-demo {
+    box-sizing: border-box; /* box-sizing: border-box */
+    background-color: #10b981;
+}
+
+/* Descriptive Text Styles */
+.layer-description {
+    max-width: 800px;
+    margin-top: 40px;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+}
+
+.layer-description ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.layer-description li {
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.tag-margin { background-color: #ffedd5; color: #c2410c; }
+.tag-border { background-color: #fef08a; color: #a16207; }
+.tag-padding { background-color: #dcfce7; color: #15803d; }
+.tag-content { background-color: #dbeafe; color: #1d4ed8; }

@@ -1,0 +1,132 @@
+/* CSS for Question 5: Advanced CSS Selectors Demonstration */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8fafc;
+    color: #1e293b;
+    padding: 40px 20px;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 850px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+h1 {
+    font-size: 2.2rem;
+    color: #0f172a;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 10px;
+}
+
+/* -------------------------------------------------------------
+   1. ATTRIBUTE SELECTORS ([type="text"], [href^="https"])
+   ------------------------------------------------------------- */
+
+/* Attribute Selector matching input type="text" */
+input[type="text"] {
+    width: 100%;
+    padding: 10px 14px;
+    border: 2px solid #cbd5e1;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+/* Attribute Selector matching links starting with "https" */
+a[href^="https"] {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* -------------------------------------------------------------
+   2. PSEUDO-CLASSES (:hover, :focus, :nth-child())
+   ------------------------------------------------------------- */
+
+/* Pseudo-class :focus changing input border on focus */
+input[type="text"]:focus {
+    border-color: #2563eb;
+    outline: none;
+    background-color: #eff6ff;
+}
+
+/* Pseudo-class :hover changing link color on hover */
+a[href^="https"]:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
+}
+
+/* Pseudo-class :nth-child() styling alternate list rows */
+ul.selector-list li:nth-child(odd) {
+    background-color: #f1f5f9;
+}
+
+ul.selector-list li:nth-child(even) {
+    background-color: #e2e8f0;
+}
+
+/* -------------------------------------------------------------
+   3. PSEUDO-ELEMENTS (::before, ::after)
+   ------------------------------------------------------------- */
+
+/* Pseudo-element ::before adding a custom icon before list items */
+ul.selector-list li::before {
+    content: "▶ ";
+    color: #2563eb;
+    font-size: 0.85rem;
+    margin-right: 8px;
+}
+
+/* Pseudo-element ::after adding a tag label after secure links */
+a[href^="https"]::after {
+    content: " (Secure Link 🔒)";
+    font-size: 0.8rem;
+    color: #059669;
+    font-weight: normal;
+}
+
+/* -------------------------------------------------------------
+   4. COMBINATORS (>, +, ~, and Descendant)
+   ------------------------------------------------------------- */
+
+/* Descendant Combinator: Selects all <p> inside .container */
+.container p {
+    font-size: 1.05rem;
+    margin-bottom: 15px;
+}
+
+/* Child Combinator (>): Selects direct <li> children of .selector-list */
+ul.selector-list > li {
+    padding: 12px 18px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    list-style: none;
+    font-weight: 500;
+}
+
+/* Adjacent Sibling Combinator (+): Selects paragraph immediately following <h2> */
+h2 + p {
+    color: #475569;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+/* General Sibling Combinator (~): Selects all <small> siblings following <input> */
+input ~ small {
+    display: block;
+    color: #64748b;
+    margin-bottom: 20px;
+}
