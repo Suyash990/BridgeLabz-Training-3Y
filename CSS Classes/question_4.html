@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 4 - CSS Selectors Practice Page</title>
+    <link rel="stylesheet" href="style_4.css">
+</head>
+<body>
+    <!-- Header with ID selector -->
+    <header id="page-header">
+        <h1>CSS Selectors Practice Page</h1>
+        <p>Demonstrating element, class, ID, attribute, and combinator selectors in action.</p>
+    </header>
+
+    <!-- Main Container with Class selector -->
+    <main class="practice-container">
+        <h2>Combinators &amp; Selectors Showcase</h2>
+        <p>Adjacent Sibling Combinator (h2 + p): This italic paragraph immediately follows the H2 heading.</p>
+
+        <p>Descendant Combinator (.practice-container p): Standard body paragraph styled inside the container card.</p>
+
+        <!-- Attribute Selector Example -->
+        <label for="user-email">Email Input (Attribute Selector [type="email"]):</label>
+        <input type="email" id="user-email" placeholder="user@example.com">
+        <small>General Sibling Combinator (input ~ small): Helper note following the input element.</small>
+
+        <!-- Child Combinator List Example -->
+        <h3>Sample Item List (Child Combinator ul.sample-list &gt; li):</h3>
+        <ul class="sample-list">
+            <li>Item 1: Styled using direct child list-item selector</li>
+            <li>Item 2: Clean padding and subtle background color</li>
+            <li>Item 3: Fully semantic HTML structure</li>
+        </ul>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 CSS Selectors Practice Suite. All rights reserved.</p>
+    </footer>
+</body>
+</html>

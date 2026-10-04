@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 10 - Complete Mini User Interface Layout</title>
+    <link rel="stylesheet" href="style_10.css">
+</head>
+<body>
+    <!-- 1. Header -->
+    <header>
+        <div class="brand">Mini<span>UI</span></div>
+        <nav>
+            <a href="#profile">Profile</a>
+            <a href="#settings">Settings</a>
+            <a href="#help">Help</a>
+        </nav>
+    </header>
+
+    <!-- 2. Main Content Card -->
+    <main>
+        <div class="main-card">
+            <!-- Header Row with Image -->
+            <div class="card-header-row">
+                <img src="https://picsum.photos/id/1005/150/150" alt="User Avatar" class="card-avatar">
+                <div class="card-header-text">
+                    <h2>User Account Profile</h2>
+                    <p>Update your personal information and account preferences below.</p>
+                </div>
+            </div>
+
+            <!-- Form inside Card -->
+            <form action="#" method="post" class="mini-form">
+                <div class="form-group">
+                    <label for="display-name">Display Name:</label>
+                    <input type="text" id="display-name" name="display-name" value="Alex Morgan" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email-address">Email Address:</label>
+                    <input type="email" id="email-address" name="email-address" value="alex.morgan@example.com" required>
+                </div>
+
+                <!-- Buttons inside Card -->
+                <div class="button-row">
+                    <button type="submit" class="btn-card btn-save">Save Changes</button>
+                    <button type="button" class="btn-card btn-cancel">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- 3. Footer -->
+    <footer>
+        <p>&copy; 2026 Mini UI Architecture. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,107 @@
+/* CSS for Question 8: Box-Sizing Comparison Page */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Center the content using Flexbox */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f1f5f9;
+    color: #1e293b;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.3rem;
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.05rem;
+    color: #64748b;
+    margin-bottom: 50px;
+}
+
+/* Create two boxes side-by-side using Flexbox */
+.comparison-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    width: 100%;
+    max-width: 900px;
+    flex-wrap: wrap;
+}
+
+/* Base Box Styling */
+.box {
+    width: 320px; /* Equal width */
+    padding: 30px; /* Equal padding */
+    border: 10px solid #0284c7; /* Equal border */
+    border-radius: 12px;
+    color: #ffffff;
+    font-weight: bold;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 1. Default box-sizing: content-box (Red Box) */
+.box-content {
+    box-sizing: content-box; /* Default box-sizing */
+    background-color: #ef4444; /* Contrasting red background color */
+}
+
+/* 2. box-sizing: border-box (Green Box) */
+.box-border {
+    box-sizing: border-box; /* box-sizing: border-box */
+    background-color: #10b981; /* Contrasting green background color */
+}
+
+.box h2 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.box p {
+    font-size: 0.95rem;
+    font-weight: normal;
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
+/* Descriptive Text Explanation Section */
+.explanation-card {
+    max-width: 800px;
+    margin-top: 50px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    text-align: left;
+}
+
+.explanation-card h3 {
+    font-size: 1.2rem;
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+
+.explanation-card p {
+    font-size: 0.95rem;
+    color: #475569;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}

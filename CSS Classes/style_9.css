@@ -1,0 +1,131 @@
+/* CSS for Question 9: Combined Effects Demonstration Page */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8fafc;
+    color: #1e293b;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.3rem;
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.05rem;
+    color: #64748b;
+    margin-bottom: 50px;
+}
+
+/* Use Flexbox to distribute multiple examples evenly across page */
+.effects-grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.effect-card {
+    background-color: #ffffff;
+    flex: 1;
+    min-width: 280px;
+    padding: 35px 25px;
+    border-radius: 14px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); /* Subtle box shadow */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.effect-card h2 {
+    font-size: 1.3rem;
+    color: #0f172a;
+    margin-bottom: 20px;
+}
+
+.effect-card p {
+    font-size: 0.95rem;
+    color: #64748b;
+    line-height: 1.5;
+    margin-top: 20px;
+}
+
+/* -------------------------------------------------------------
+   COMBINED EFFECTS (Pseudo-Classes + Transitions + Transformations + Shadow)
+   ------------------------------------------------------------- */
+
+/* Example 1: Grow & Color Shift Button */
+.btn-combined-1 {
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: #2563eb;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
+    /* Smooth, visually balanced transition */
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-combined-1:hover {
+    transform: scale(1.1) translateY(-3px); /* Grows slightly and lifts */
+    background-color: #059669; /* Changes color */
+    box-shadow: 0 12px 20px rgba(5, 150, 105, 0.35); /* Enhanced box shadow */
+}
+
+/* Example 2: Rotate & Pulse Card Button */
+.btn-combined-2 {
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: #7c3aed;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(124, 58, 237, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-combined-2:hover {
+    transform: rotate(-3deg) scale(1.08); /* Rotates and grows */
+    background-color: #db2777; /* Changes color */
+    box-shadow: 0 12px 20px rgba(219, 39, 119, 0.35);
+}
+
+/* Example 3: Skew & Border Glow Button */
+.btn-combined-3 {
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: #0284c7;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(2, 132, 199, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-combined-3:hover {
+    transform: skewX(-8deg) scale(1.05); /* Skews and grows */
+    background-color: #d97706; /* Changes color */
+    box-shadow: 0 12px 20px rgba(217, 119, 6, 0.35);
+}

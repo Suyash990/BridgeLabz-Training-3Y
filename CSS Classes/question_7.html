@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 7 - User Interface Components Page</title>
+    <link rel="stylesheet" href="style_7.css">
+</head>
+<body>
+    <!-- Card-like Container -->
+    <main class="ui-card">
+        <header class="ui-header">
+            <h1>UI Component Dashboard</h1>
+            <p>Consistent padding, border-radius, shadows, and focus highlights aligned with Flexbox.</p>
+        </header>
+
+        <!-- Search Bar Component -->
+        <div class="search-group">
+            <input type="text" class="search-input" placeholder="Search components, users, or files...">
+            <button class="btn-ui btn-search">Search</button>
+        </div>
+
+        <!-- Dropdown Menu Component -->
+        <div class="dropdown-group">
+            <label for="category">Select Filter Category:</label>
+            <select id="category" class="custom-select">
+                <option value="all">All Categories</option>
+                <option value="design">UI/UX Design Systems</option>
+                <option value="frontend">Frontend Architecture</option>
+                <option value="backend">Backend Microservices</option>
+            </select>
+        </div>
+
+        <!-- Action Buttons Component -->
+        <div class="button-row">
+            <button class="btn-ui btn-search">Apply Filter</button>
+            <button class="btn-ui btn-cancel">Reset Defaults</button>
+        </div>
+    </main>
+</body>
+</html>

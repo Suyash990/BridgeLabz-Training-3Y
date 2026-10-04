@@ -1,0 +1,148 @@
+/* CSS for Question 6: CSS Animation Demonstration Page */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Center animations vertically and horizontally on the page */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0f172a;
+    color: #f8fafc;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.3rem;
+    color: #38bdf8;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.05rem;
+    color: #94a3b8;
+    margin-bottom: 60px;
+}
+
+/* Animation Showcase Flexbox Container */
+.animation-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.animation-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.animation-label {
+    margin-top: 25px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #cbd5e1;
+}
+
+/* -------------------------------------------------------------
+   1. ANIMATED ELEMENT 1: Bouncing Ball (@keyframes bounce)
+   ------------------------------------------------------------- */
+.bouncing-ball {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #ef4444, #b91c1c);
+    border-radius: 50%;
+    box-shadow: 0 10px 20px rgba(239, 68, 68, 0.4);
+    
+    /* Animation Properties */
+    animation-name: bounce;
+    animation-duration: 1.2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0) scaleX(1.1) scaleY(0.9);
+    }
+    100% {
+        transform: translateY(-60px) scaleX(0.95) scaleY(1.05);
+    }
+}
+
+/* -------------------------------------------------------------
+   2. ANIMATED ELEMENT 2: Pulse Moving Box (@keyframes pulse-box)
+   ------------------------------------------------------------- */
+.pulse-box {
+    width: 90px;
+    height: 90px;
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.4);
+    
+    /* Animation Properties */
+    animation-name: pulse-box;
+    animation-duration: 2s;
+    animation-delay: 0.3s; /* animation-delay property */
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite; /* animation-iteration-count property */
+    animation-direction: alternate; /* animation-direction property */
+}
+
+@keyframes pulse-box {
+    0% {
+        transform: scale(1) rotate(0deg);
+        border-radius: 16px;
+    }
+    50% {
+        transform: scale(1.2) rotate(45deg);
+        border-radius: 50%;
+    }
+    100% {
+        transform: scale(1) rotate(90deg);
+        border-radius: 16px;
+    }
+}
+
+/* -------------------------------------------------------------
+   3. ANIMATED ELEMENT 3: Color-Changing Text (@keyframes color-wave)
+   ------------------------------------------------------------- */
+.color-text {
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    
+    /* Animation Properties */
+    animation-name: color-wave;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes color-wave {
+    0% {
+        color: #10b981;
+        text-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+    }
+    50% {
+        color: #f59e0b;
+        text-shadow: 0 0 15px rgba(245, 158, 11, 0.7);
+    }
+    100% {
+        color: #ec4899;
+        text-shadow: 0 0 20px rgba(236, 72, 153, 0.9);
+    }
+}

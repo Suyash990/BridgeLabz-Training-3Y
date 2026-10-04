@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 8 - Box-Sizing Comparison Page</title>
+    <link rel="stylesheet" href="style_8.css">
+</head>
+<body>
+    <header>
+        <h1>CSS Box-Sizing Comparison</h1>
+        <p>Comparing content-box vs border-box with equal width (320px), padding (30px), and border (10px).</p>
+    </header>
+
+    <main class="comparison-container">
+        <!-- Box 1: Default content-box -->
+        <div class="box box-content">
+            <h2>box-sizing: content-box</h2>
+            <small>Width: 320px | Padding: 30px | Border: 10px</small>
+            <p><strong>Actual Rendered Width = 400px</strong><br>(320px width + 60px padding + 20px border)</p>
+        </div>
+
+        <!-- Box 2: border-box -->
+        <div class="box box-border">
+            <h2>box-sizing: border-box</h2>
+            <small>Width: 320px | Padding: 30px | Border: 10px</small>
+            <p><strong>Actual Rendered Width = 320px</strong><br>(Padding &amp; border absorbed inside width)</p>
+        </div>
+    </main>
+
+    <!-- Descriptive Text Explanation -->
+    <section class="explanation-card">
+        <h3>How Box-Sizing Affects Element Dimensions:</h3>
+        <p>Under <code>content-box</code> (the browser default), padding and borders are added on top of the specified element width, causing the total rendered box to expand beyond 320px to <strong>400px</strong>.</p>
+        <p>Under <code>border-box</code>, padding and border values are absorbed inside the declared width, maintaining a fixed overall width of <strong>320px</strong> for predictable responsive web layouts.</p>
+    </section>
+</body>
+</html>

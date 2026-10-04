@@ -1,0 +1,101 @@
+/* CSS for Question 3: Image Showcase Layout */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f1f5f9;
+    color: #1e293b;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.4rem;
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.05rem;
+    color: #64748b;
+    margin-bottom: 40px;
+}
+
+/* Six images arranged using Grid or Flexbox */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Card/Figure styling */
+figure.image-card {
+    background-color: #ffffff;
+    border-radius: 14px; /* Rounded corners */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08); /* Box-shadow */
+    overflow: hidden;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Image Container for Overlay & Scaling */
+.img-container {
+    position: relative;
+    overflow: hidden;
+    height: 220px;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    /* Transition for scale transform */
+    transition: transform 0.4s ease;
+}
+
+/* Semi-transparent Dark Overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent overlay */
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+/* On hover: scale up (transform: scale(1.1)) and darken using overlay */
+figure.image-card:hover .img-container img {
+    transform: scale(1.1); /* Slightly scale up */
+}
+
+figure.image-card:hover .overlay {
+    opacity: 1; /* Darken overlay */
+}
+
+/* Short captions below each image using <figcaption> */
+figcaption {
+    padding: 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #334155;
+    background-color: #ffffff;
+    border-top: 1px solid #f1f5f9;
+}
+
+/* Responsive Layout: stack images in one column below 700px */
+@media (max-width: 700px) {
+    .gallery-grid {
+        grid-template-columns: 1fr; /* Single column below 700px */
+    }
+}

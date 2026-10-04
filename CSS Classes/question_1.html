@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 1 - Webpage Demonstrating Pseudo-Classes</title>
+    <link rel="stylesheet" href="style_1.css">
+</head>
+<body>
+    <header>
+        <h1>CSS Pseudo-Classes Demonstration</h1>
+        <p>Showcasing :hover, :focus, :active, and :nth-child() state changes aligned in one row using Flexbox.</p>
+    </header>
+
+    <main class="examples-row">
+        
+        <div class="example-card">
+            <h2>1. :hover Selector</h2>
+            <a href="#hover-demo" class="hover-link">Hover Over Me</a>
+            <p class="explanation"><strong>:hover</strong> changes background and text color when the mouse pointer passes over the link.</p>
+        </div>
+
+        <div class="example-card">
+            <h2>2. :focus Selector</h2>
+            <input type="text" class="focus-input" placeholder="Click to focus...">
+            <p class="explanation"><strong>:focus</strong> triggers green border glow and background highlight when input receives cursor focus.</p>
+        </div>
+
+        <div class="example-card">
+            <h2>3. :active Selector</h2>
+            <button class="active-btn">Click &amp; Hold Me</button>
+            <p class="explanation"><strong>:active</strong> applies scale shrink and dark violet background while button is pressed down.</p>
+        </div>
+
+        <div class="example-card">
+            <h2>4. :nth-child() Selector</h2>
+            <ul class="nth-list">
+                <li>Item 1 (:nth-child(odd))</li>
+                <li>Item 2 (:nth-child(even))</li>
+                <li>Item 3 (:nth-child(odd))</li>
+                <li>Item 4 (:nth-child(even))</li>
+            </ul>
+            <p class="explanation"><strong>:nth-child()</strong> targets specific rows in a list to alternate row background colors.</p>
+        </div>
+    </main>
+</body>
+</html>
