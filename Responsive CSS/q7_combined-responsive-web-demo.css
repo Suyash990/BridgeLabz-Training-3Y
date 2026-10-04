@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #222;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background-color: #222;
+    color: white;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+section {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    animation: fadeIn 1s ease;
+}
+
+section h2 {
+    margin-bottom: 20px;
+}
+
+.images {
+    display: grid;
+    gap: 15px;
+}
+
+.images img {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.images img:hover {
+    transform: scale(1.05);
+}
+
+.explanation p {
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.items {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.items article {
+    padding: 15px;
+    background-color: #eeeeee;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.items article:hover {
+    transform: translateY(-5px);
+}
+
+.items h3 {
+    margin-bottom: 8px;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background-color: #222;
+    color: white;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 700px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+    }
+}
