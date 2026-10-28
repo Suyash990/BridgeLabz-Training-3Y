@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box{
+            height: 100px;
+            width: 100px;
+            border:1px solid black;
+            
+        }
+
+        .active{
+            background-color: rgb(220, 79, 79);
+            border-radius: 10px;
+            padding: 10px;;
+        }
+
+        .bg-green{
+            background-color: green;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        .bg-blue{
+            background-color: blue;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <center><div class="box "></div></center>
+    
+    <button id="redBtn">Red</button>
+    <button id="blueBtn">Blue</button>
+    <button id="greenbtn">green</button>
+    
+
+    <input id="inputname" type="text" placeholder="write here">
+
+
+
+
+    <script>
+        const boxE1=document.querySelector(".box");
+        const redBtnE1=document.querySelector("#redBtn");
+        const bluebtnE1=document.querySelector("#blueBtn");
+        const greenbtnE1=document.querySelector("#greenbtn");
+
+
+        redBtnE1.addEventListener("click",()=>{
+
+
+            // boxE1.style.backgroundColor="red";
+            // boxE1.style.padding="30px";
+            // boxE1.style.borderRadius="30px";
+
+            boxE1.classList.add("active")
+             
+        })
+
+
+        bluebtnE1.addEventListener("click",()=>{
+            // boxE1.style.backgroundColor="blue";
+            // boxE1.style.padding="30px";
+            // boxE1.style.borderRadius="30px";
+
+            boxE1.classList.add("bg-blue")
+             
+        })
+
+        greenbtnE1.addEventListener("click",()=>{
+            // boxE1.style.backgroundColor="green";
+            // boxE1.style.padding="30px";
+            // boxE1.style.borderRadius="30px";
+            boxE1.classList.remove("bg-blue")
+            boxE1.classList.remove("active")
+             boxE1.classList.add("bg-green")
+        })
+    
+
+       
+
+    </script>
+
+    
+</body>
+</html>

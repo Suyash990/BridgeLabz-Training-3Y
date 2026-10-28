@@ -1,0 +1,154 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Form Validator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+
+        form {
+            width: 350px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+        }
+
+        .valid {
+            border-color: green;
+        }
+
+        .invalid {
+            border-color: red;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Student Registration Form</h2>
+
+    <form id="studentForm">
+        <label>Name:</label>
+        <input type="text" id="name">
+        <span class="error" id="nameError"></span>
+
+        <br><br>
+
+        <label>Email:</label>
+        <input type="text" id="email">
+        <span class="error" id="emailError"></span>
+
+        <br><br>
+
+        <label>Phone:</label>
+        <input type="text" id="phone">
+        <span class="error" id="phoneError"></span>
+
+        <br><br>
+
+        <label>Password:</label>
+        <input type="password" id="password">
+        <span class="error" id="passwordError"></span>
+
+        <br><br>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <script>
+        const form = document.getElementById("studentForm");
+
+        const fields = [
+            {
+                id: "name",
+                errorId: "nameError",
+                regex: /^[A-Za-z]+$/,
+                message: "Name must contain only alphabets."
+            },
+            {
+                id: "email",
+                errorId: "emailError",
+                regex: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                message: "Enter a valid email address."
+            },
+            {
+                id: "phone",
+                errorId: "phoneError",
+                regex: /^\d{10}$/,
+                message: "Phone must contain exactly 10 digits."
+            },
+            {
+                id: "password",
+                errorId: "passwordError",
+                regex: /^(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9\s])\S+$/,
+                message: "Password must contain an uppercase letter, a number, and a special character."
+            }
+        ];
+
+        function validateField(field) {
+            const input = document.getElementById(field.id);
+            const error = document.getElementById(field.errorId);
+            const value = input.value;
+
+            if (field.regex.test(value)) {
+                input.classList.remove("invalid");
+                input.classList.add("valid");
+                error.textContent = "";
+                return true;
+            } else {
+                input.classList.remove("valid");
+                input.classList.add("invalid");
+                error.textContent = field.message;
+                return false;
+            }
+        }
+
+        fields.forEach(field => {
+            document.getElementById(field.id).addEventListener("input", () => {
+                validateField(field);
+            });
+        });
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let isValid = true;
+
+            fields.forEach(field => {
+                if (!validateField(field)) {
+                    isValid = false;
+                }
+            });
+
+            if (isValid) {
+                alert("Registration successful!");
+                form.reset();
+
+                fields.forEach(field => {
+                    document.getElementById(field.id).classList.remove("valid", "invalid");
+                    document.getElementById(field.errorId).textContent = "";
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
+```
