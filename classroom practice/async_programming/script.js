@@ -54,6 +54,7 @@ function getUser(callba){
     return new Promise((resolve,reject)=>{
         setTimeout(()=>{
         console.log("user data...");
+        resolve();
         },3000);
     })  
 }
@@ -61,6 +62,7 @@ function getUserBankDetails(){
     return new Promise((resolve,reject)=>{
         setTimeout(()=>{
             console.log("user bank details");
+            resolve()
         },1000)
     })  
 }
@@ -68,20 +70,21 @@ function getUserInsurance(){
      return new Promise((resolve,reject)=>{
         setTimeout(()=>{
             console.log("user Insurance");
+            resolve()
             },2000)
     })  
     
 }
-getUser()
-.then(()=>{
-    return getUserBankDetails();
-}).then(()=>{
-    return getUserInsurance();
-}).then(()=>{
-    console.log("process...end")
-}).catch((err)=>{
-    console.log(err)
-})
+// getUser()
+// .then(()=>{
+//     return getUserBankDetails();
+// }).then(()=>{
+//     return getUserInsurance();
+// }).then(()=>{
+//     console.log("process...end")l
+// }).catch((err)=>{
+//     console.log(err)
+// })
 
 async function call() {
     await getUser();
