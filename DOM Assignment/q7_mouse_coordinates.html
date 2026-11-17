@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mouse Coordinates Logger</title>
+    <style>
+        #box {
+            width: 400px;
+            height: 400px;
+            border: 2px solid black;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        #dot {
+            width: 10px;
+            height: 10px;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Mouse Coordinates Logger</h2>
+
+    <p id="coordinates">Move mouse inside the box</p>
+
+    <div id="box"></div>
+
+    <script>
+        const box = document.getElementById("box");
+        const coordinates = document.getElementById("coordinates");
+
+        box.addEventListener("mousemove", function(e) {
+            let x = e.clientX;
+            let y = e.clientY;
+
+            coordinates.textContent =
+                "ClientX: " + x + " | ClientY: " + y;
+        });
+
+        box.addEventListener("dblclick", function(e) {
+            let rect = box.getBoundingClientRect();
+
+            let x = e.clientX - rect.left;
+            let y = e.clientY - rect.top;
+
+            const dot = document.createElement("div");
+
+            dot.id = "dot";
+            dot.style.left = x + "px";
+            dot.style.top = y + "px";
+
+            box.appendChild(dot);
+        });
+    </script>
+
+</body>
+</html>

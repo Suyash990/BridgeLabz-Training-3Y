@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Table Filter</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 60%;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Student Details</h2>
+
+    <input type="text" id="search" placeholder="Search students">
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Branch</th>
+                <th>CGPA</th>
+            </tr>
+        </thead>
+
+        <tbody id="studentTable">
+            <tr>
+                <td>Rahul</td>
+                <td>CSE</td>
+                <td>8.5</td>
+            </tr>
+
+            <tr>
+                <td>Aman</td>
+                <td>IT</td>
+                <td>9.0</td>
+            </tr>
+
+            <tr>
+                <td>Suyash</td>
+                <td>CSE</td>
+                <td>8.8</td>
+            </tr>
+
+            <tr>
+                <td>Priya</td>
+                <td>ECE</td>
+                <td>9.2</td>
+            </tr>
+
+            <tr>
+                <td>Rohit</td>
+                <td>ME</td>
+                <td>7.8</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p id="noResult" style="display:none;">No results found</p>
+
+    <script>
+        const search = document.getElementById("search");
+        const table = document.getElementById("studentTable");
+        const noResult = document.getElementById("noResult");
+
+        search.addEventListener("input", function() {
+            let value = search.value.toLowerCase();
+            let rows = table.querySelectorAll("tr");
+            let count = 0;
+
+            rows.forEach(function(row) {
+                let text = row.textContent.toLowerCase();
+
+                if (text.includes(value)) {
+                    row.style.display = "";
+                    count++;
+                } else {
+                    row.style.display = "none";
+                }
+            });
+
+            if (count === 0) {
+                noResult.style.display = "block";
+            } else {
+                noResult.style.display = "none";
+            }
+        });
+    </script>
+
+</body>
+</html>

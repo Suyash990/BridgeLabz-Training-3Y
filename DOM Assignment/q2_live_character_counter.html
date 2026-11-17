@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Character Counter</title>
+    <style>
+        #counter {
+            color: green;
+        }
+
+        .warning {
+            color: yellow !important;
+        }
+
+        .danger {
+            color: red !important;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Live Character Counter</h2>
+
+    <textarea id="message" maxlength="100"
+        placeholder="Enter your message"
+        rows="5" cols="40"></textarea>
+
+    <p>Remaining Characters: <span id="counter">100</span></p>
+
+    <button id="resetBtn">Reset</button>
+
+    <script>
+        const message = document.getElementById("message");
+        const counter = document.getElementById("counter");
+        const resetBtn = document.getElementById("resetBtn");
+
+        let maxLength = 100;
+
+        message.addEventListener("input", function(e) {
+
+            let remaining = maxLength - message.value.length;
+
+            counter.textContent = remaining;
+
+            counter.classList.remove("warning", "danger");
+
+            if (remaining <= 20 && remaining > 0) {
+                counter.classList.add("warning");
+            }
+
+            if (remaining === 0) {
+                counter.classList.add("danger");
+                e.preventDefault();
+            }
+        });
+
+        resetBtn.addEventListener("click", function() {
+            message.value = "";
+            counter.textContent = maxLength;
+
+            counter.classList.remove("warning", "danger");
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product List Manager</title>
+</head>
+<body>
+
+    <h2>Product List Manager</h2>
+
+    <input type="text" id="productInput" placeholder="Enter product">
+    <button id="addBtn">Add Product</button>
+
+    <ul id="productList"></ul>
+
+    <script>
+        const input = document.getElementById("productInput");
+        const addBtn = document.getElementById("addBtn");
+        const productList = document.getElementById("productList");
+
+        addBtn.addEventListener("click", function() {
+            const value = input.value.trim();
+
+            if (value === "") {
+                alert("Enter a product name");
+                return;
+            }
+
+            const li = document.createElement("li");
+
+            const span = document.createElement("span");
+            span.textContent = value;
+
+            const editBtn = document.createElement("button");
+            editBtn.textContent = "Edit";
+
+            const deleteBtn = document.createElement("button");
+            deleteBtn.textContent = "Delete";
+
+            li.append(span, editBtn, deleteBtn);
+            productList.appendChild(li);
+
+            input.value = "";
+        });
+
+        productList.addEventListener("click", function(e) {
+
+            if (e.target.textContent === "Delete") {
+                e.target.parentElement.remove();
+            }
+
+            if (e.target.textContent === "Edit") {
+                const li = e.target.parentElement;
+                const span = li.querySelector("span");
+
+                const editInput = document.createElement("input");
+                editInput.value = span.textContent;
+
+                li.replaceChild(editInput, span);
+
+                e.target.textContent = "Save";
+
+                editInput.focus();
+            }
+
+            else if (e.target.textContent === "Save") {
+                const li = e.target.parentElement;
+                const editInput = li.querySelector("input");
+
+                const span = document.createElement("span");
+                span.textContent = editInput.value;
+
+                li.replaceChild(span, editInput);
+
+                e.target.textContent = "Edit";
+            }
+        });
+
+        document.addEventListener("click", function(e) {
+            const editInput = productList.querySelector("input");
+
+            if (editInput && !productList.contains(e.target)) {
+                const li = editInput.parentElement;
+                const span = document.createElement("span");
+
+                span.textContent = editInput.value;
+                li.replaceChild(span, editInput);
+
+                li.querySelector("button").textContent = "Edit";
+            }
+        });
+    </script>
+
+</body>
+</html>

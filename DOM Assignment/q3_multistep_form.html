@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multi Step Form</title>
+</head>
+<body>
+
+    <h2>Multi-Step Registration Form</h2>
+
+    <div id="step1">
+        <h3>Step 1: Name</h3>
+        <input type="text" id="name" placeholder="Enter your name">
+        <button onclick="nextStep()">Next</button>
+    </div>
+
+    <div id="step2" style="display:none;">
+        <h3>Step 2: Email</h3>
+        <input type="email" id="email" placeholder="Enter your email">
+        <button onclick="previousStep()">Back</button>
+        <button onclick="nextStep()">Next</button>
+    </div>
+
+    <div id="step3" style="display:none;">
+        <h3>Step 3: Password</h3>
+        <input type="password" id="password" placeholder="Enter password">
+        <button onclick="previousStep()">Back</button>
+        <button onclick="nextStep()">Submit</button>
+    </div>
+
+    <div id="summary" style="display:none;">
+        <h2>Registration Successful!</h2>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        let currentStep = 1;
+
+        function showStep(step) {
+            document.getElementById("step1").style.display = "none";
+            document.getElementById("step2").style.display = "none";
+            document.getElementById("step3").style.display = "none";
+            document.getElementById("summary").style.display = "none";
+
+            document.getElementById("step" + step).style.display = "block";
+        }
+
+        function nextStep() {
+
+            if (currentStep === 1) {
+                let name = document.getElementById("name").value.trim();
+
+                if (name === "") {
+                    alert("Please enter your name");
+                    return;
+                }
+            }
+
+            if (currentStep === 2) {
+                let email = document.getElementById("email").value.trim();
+
+                if (email === "" ||
+                    !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                    alert("Please enter a valid email");
+                    return;
+                }
+            }
+
+            if (currentStep === 3) {
+                let password = document.getElementById("password").value;
+
+                if (password.length < 6) {
+                    alert("Password must contain at least 6 characters");
+                    return;
+                }
+
+                showSummary();
+                return;
+            }
+
+            currentStep++;
+            showStep(currentStep);
+        }
+
+        function previousStep() {
+            if (currentStep > 1) {
+                currentStep--;
+                showStep(currentStep);
+            }
+        }
+
+        function showSummary() {
+            document.getElementById("step3").style.display = "none";
+
+            document.getElementById("summary").style.display = "block";
+
+            document.getElementById("result").innerHTML =
+                "Name: " + document.getElementById("name").value +
+                "<br>Email: " + document.getElementById("email").value;
+        }
+    </script>
+
+</body>
+</html>
